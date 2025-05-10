@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Popin Event Manager</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            background: white;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .event-info {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .event-info h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .event-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .status {
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            background: #f8f9fa;
+            color: #666;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        #open-button {
+            background: #4CAF50;
+            color: white;
+        }
+
+        #open-button:hover {
+            background: #45a049;
+        }
+
+        #open-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #close-button {
+            background: #f44336;
+            color: white;
+        }
+
+        #close-button:hover {
+            background: #da190b;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Popin Event Manager</h1>
+        </div>
+        
+        <div id="status" class="status">
+            Loading event data...
+        </div>
+        
+        <div class="event-info">
+            <h2 id="event-title">Loading...</h2>
+            <p><strong>Date:</strong> <span id="event-date">Loading...</span></p>
+            <p><strong>Location:</strong> <span id="event-location">Loading...</span></p>
+        </div>
+        
+        <div class="button-group">
+            <button id="open-button" disabled>Open in Popin</button>
+            <button id="close-button">Close</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 
