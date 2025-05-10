@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Popin Event Manager",
+  "version": "1.0",
+  "description": "Manage events with Popin",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.lu.ma/*",
+    "*://*.meetup.com/*",
+    "*://*.eventbrite.ca/*",
+    "*://*.allevents.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.lu.ma/*",
+        "*://*.meetup.com/*",
+        "*://*.eventbrite.ca/*",
+        "*://*.allevents.in/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
